@@ -2,6 +2,8 @@
 @import url('//fonts.googleapis.com/icon?family=Material+Icons');
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+/* importamos los estilos para el calendario (angular-calendar) */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 @include mat-core();
 
@@ -47,9 +49,9 @@ button:focus {
   outline: 0px;
 }
 /* Centrar mat-expansion panel */
-.mat-expansion-panel-content > .mat-expansion-panel-body { 
+.mat-expansion-panel-content > .mat-expansion-panel-body {
   width: -webkit-fill-available;
-  padding: 0; 
+  padding: 0;
 }
 mat-footer-row, mat-row {
   min-height: 38px !important;

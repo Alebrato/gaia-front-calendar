@@ -69,6 +69,11 @@
               (click)="showCards = false" routerLink="/administracion/clientes" routerLinkActive="active">
               <mat-icon>people</mat-icon>
             </mat-button-toggle>
+            <!-- Botón calendario-->
+            <mat-button-toggle matTooltip="{{ 'CALENDAR' | translate}}" matTooltipPosition="before" value="bold"
+              (click)="showCards = false" routerLink="/administracion/calendar" routerLinkActive="active">
+              <mat-icon>calendar_today</mat-icon>
+            </mat-button-toggle>
           </mat-button-toggle-group>
         </mat-expansion-panel>
         <!-- Filtro por ROL-->

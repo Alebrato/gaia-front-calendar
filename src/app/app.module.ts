@@ -48,7 +48,9 @@ import { SociedadesCardComponent } from './components/administracion/cards/socie
 import { ClientesCardComponent } from './components/administracion/cards/clientes-card/clientes-card.component';
 import { SecurityDirective } from './services/security.directive';
 import { AuthGuardService } from './services/auth-guard.service';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarComponent } from './components/administracion/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     OficinasCardComponent,
     SociedadesCardComponent,
     ClientesCardComponent,
-    SecurityDirective
+    SecurityDirective,
+    CalendarComponent
   ],
   imports: [
     RouterModule,
@@ -105,7 +108,11 @@ import { AuthGuardService } from './services/auth-guard.service';
     MatTooltipModule,
     MatAutocompleteModule,
     LottieAnimationViewModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [
     {
