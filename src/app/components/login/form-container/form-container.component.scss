@@ -1,0 +1,126 @@
+/*
+ * Login container component Styles
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300);
+
+input {
+  font-family: "Montserrat", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.error-login {
+  color: red;
+  margin-bottom: 20px;
+  display: block;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+}
+
+/* Botón inicio de sesión */
+
+.mat-raised-button {
+  color: #FFFFFF;
+  background-color: #8c8c8c;
+  border-color: #C80927;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mat-raised-button:not(:disabled):not(.disabled):active{
+background-color: #a00c23;
+  border-color: #a00c23;
+}
+
+.mat-raised-button:not(:disabled):not(.disabled):active:focus{
+ box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.28)
+}
+
+.mat-raised-button:hover {
+  background-color: #a00c23;
+  border-color: #a00c23;
+  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.28)
+}
+
+.mat-raised-button:active {
+  background-color: #a00c23;
+  border-color: #a00c23;
+  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.28)
+}
+
+.mat-raised-button:focus {
+  background-color: #a00c23;
+  border-color: #a00c23;
+  box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.28)
+}
+
+/* Imputs en login page  */
+
+.usernameimput {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  width: 250px;
+}
+
+.passwordimput {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  width: 250px;
+}
+
+.help-block {
+padding-bottom: 20px;
+}
+
+.ahashakeheartache {
+			animation: kf_shake 0.4s 1 linear;
+			-moz-animation: kf_shake 0.4s 1 linear;
+			-o-animation: kf_shake 0.4s 1 linear;
+		}
+
+@keyframes kf_shake {
+			0% { -webkit-transform: translate(30px); }
+			20% { -webkit-transform: translate(-30px); }
+			40% { -webkit-transform: translate(15px); }
+			60% { -webkit-transform: translate(-15px); }
+			80% { -webkit-transform: translate(8px); }
+			100% { -webkit-transform: translate(0px); }
+		}
+		@-moz-keyframes kf_shake {
+			0% { -moz-transform: translate(30px); }
+			20% { -moz-transform: translate(-30px); }
+			40% { -moz-transform: translate(15px); }
+			60% { -moz-transform: translate(-15px); }
+			80% { -moz-transform: translate(8px); }
+			100% { -moz-transform: translate(0px); }
+		}
+		@-o-keyframes kf_shake {
+			0% { -o-transform: translate(30px); }
+			20% { -o-transform: translate(-30px); }
+			40% { -o-transform: translate(15px); }
+			60% { -o-transform: translate(-15px); }
+			80% { -o-transform: translate(8px); }
+			100% { -o-origin-transform: translate(0px); }
+    }
+    .login-page {
+      margin-top: 13%;
+  }
+  .login_block {
+    background: #FFFFFF;
+    max-width: 350px;
+    margin: 0 auto 0px;
+    padding: 3% 0% 2% 0%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.15);
+}
+.lottie_logo {
+  margin: 0 -20px;
+}

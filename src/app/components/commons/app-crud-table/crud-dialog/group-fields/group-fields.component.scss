@@ -1,0 +1,60 @@
+legend {
+  width: auto;
+  padding-right: 5px;
+}
+
+.ng-star-inserted {
+  display: inline-block !important;
+  margin: 0 1rem 0 0 !important;
+}
+
+// customClassInput 
+.input-width-1 {
+  width: 100px !important;
+}
+
+.input-width-2 {
+  width: 220px !important;
+}
+
+.input-width-3 {
+  width: 346px !important;
+}
+
+.input-width-4 {
+  width: 472px !important;
+}
+
+.input-width-5 {
+  width: 500px !important;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .header-dialog.ng-star-inserted {
+    font-size: 0.5rem;
+  }
+
+  .input-width-1 {
+    width: 200px !important;
+  }
+
+  .input-width-2 {
+    width: 200px !important;
+  }
+
+  .input-width-3 {
+    width: 200px !important;
+  }
+
+  .input-width-4 {
+    width: 200px !important;
+  }
+
+  .input-width-5 {
+    width: 200px !important;
+  }
+
+}

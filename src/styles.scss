@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+@include mat-core();
+
+$primary: mat-palette($mat-red, 900);
+$accent:  mat-palette($mat-red, 100, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+$white:   mat-palette($mat-grey, 50);
+
+$config: mat-typography-config();
+
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+body {
+  font-family: mat-font-family($config);
+  font-weight: normal;
+  margin: 0px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+/* Colores Menu sidebar*/
+
+.mat-button-toggle-checked {
+  background-color: mat-color($white)!important;
+  color: mat-color($accent, default-contrast)!important;
+  -webkit-box-shadow: 9px 7px 40px -14px rgba(0,0,0,1);
+  -moz-box-shadow: 9px 7px 40px -14px rgba(0,0,0,1);
+  box-shadow: 9px 7px 40px -14px rgba(0,0,0,1);
+  border-left: #5E5E5E 13px solid!important;
+  border-right: #5E5E5E 5px solid!important;
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #929292 !important;
+}
+
+/* Quitar borde azul en botones */
+button:focus {
+  outline: 0px;
+  outline: 0px;
+}
+/* Centrar mat-expansion panel */
+.mat-expansion-panel-content > .mat-expansion-panel-body { 
+  width: -webkit-fill-available;
+  padding: 0; 
+}
+mat-footer-row, mat-row {
+  min-height: 38px !important;
+}
+.mat-cell, .mat-footer-cell {
+  font-size: 12px !important;
+}
+.ng-trigger.ng-trigger-transformPanel.ng-tns-c6-1.mat-select-panel.mat-primary.ng-star-inserted {
+  min-width: 100% !important;
+}

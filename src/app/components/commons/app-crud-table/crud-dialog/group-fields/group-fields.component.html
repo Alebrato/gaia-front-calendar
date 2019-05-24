@@ -1,0 +1,17 @@
+<div *ngFor="let field of fields">
+  <mat-form-field *ngIf="field['key']" [ngSwitch]="switchType(field['formatType'])" class="imput"
+    appearance="outline">
+    <mat-label>{{field.value}}</mat-label>
+    <input *ngSwitchCase="'date','short'" matInput [matDatepicker]="dp" [placeholder]="field.value"
+      [formControl]="dateForms[field['key']]" (dateChange)="updateDate($event,field)" [ngClass]="">
+    <mat-datepicker-toggle *ngSwitchCase="'date','short'" matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp></mat-datepicker>
+    <input *ngSwitchCase="'number'" type="number" matInput [placeholder]="field.value" [formControl]="numberForms[field['key']]"
+      [step]="numberStep(field)" (change)="updateNumber($event,field)">
+    <input *ngSwitchDefault matInput [placeholder]="field.value" [(ngModel)]="data[field['key']]" [name]="field['key']">
+  </mat-form-field>
+  <fieldset *ngIf="!field.key">
+    <legend>{{field.value}}</legend>
+    <app-group-fields [fields]="field['elements']" [data]="data"></app-group-fields>
+  </fieldset>
+</div>

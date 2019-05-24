@@ -1,0 +1,16 @@
+<div class="oficinas" [@bounceInLeft]="bounceInLeft">
+  <div class="oficinas-header">
+    <div class="title">
+      <h3>{{ 'TITLEOFFICES' | translate }}</h3>
+    </div>
+    <div class="btn_close">
+      <button type="button" *ngIf="!disableCreatable" (click)="showCards = true" mat-icon-button matTooltip="{{ 'TITLEOFFICES' | translate }}" matTooltipPosition="after"
+        routerLink="/administracion">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="oficinas-content">
+    <app-app-crud-table [service]="oficinasService" [columns]="columnasOficina" modalTitle="{{ 'OFFICE' | translate }}"></app-app-crud-table>
+  </div>
+</div>

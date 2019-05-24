@@ -1,0 +1,97 @@
+.mat-table-header {
+
+  width: 100%;
+  background-color: #efefef;
+  box-shadow: 0px -3px 10px 0px #b9b9b9;
+}
+
+.tabla_container {
+
+  background-color: #ffffff;
+  box-shadow: -2px 4px 6px 0px #cecece;
+}
+
+.tabla_block {
+  width: 98%;
+  padding: 2%;
+  overflow: auto;
+  overflow-x: scroll;
+}
+
+
+.filter_container {
+  padding: 0 2%;
+}
+
+.btn_add_row {
+  display: inline-flex;
+  width: auto;
+  text-align: right;
+  margin: 20px 0px 0px 20px;
+}
+
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.btn_add_row h5 {
+  font-weight: normal;
+}
+
+.btn_add_row>i.material-icons.button.ng-star-inserted {
+  margin: -2px 0px 0px 10px;
+}
+
+i.material-icons.button.ng-star-inserted {
+  cursor: pointer;
+}
+
+.loading_spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 29vh;
+  z-index: 80;
+  position: relative;
+  margin-bottom: -245px;
+  background-color: #eaeaea;
+}
+
+.txt_load {
+  padding: 2%;
+  color: #bb2513;
+  font-weight: 500;
+}
+
+i:active {
+  outline: 0px;
+  outline: 0px;
+}
+
+.mat-column-select {
+  flex: 0 0 100px;
+}
+
+//customClass  from model Keyvalues
+.column-size-1 {
+  flex: 0 0 100px !important;
+}
+
+.column-size-2 {
+  flex: 0 0 150px !important;
+}
+
+.column-size-3 {
+  flex: 0 0 200px !important;
+}
+
+.column-size-4 {
+  flex: 0 0 250px !important;
+}
+
+.column-size-5 {
+  flex: 0 0 300px !important;
+}

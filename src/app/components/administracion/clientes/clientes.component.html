@@ -1,0 +1,16 @@
+<div class="clientes" [@bounceInLeft]="bounceInLeft">
+  <div class="clientes-header">
+    <div class="title">
+      <h3>{{ 'TITLECUSTOMERS' | translate}}</h3>
+    </div>
+    <div class="btn_close">
+      <button type="button" *ngIf="!disableCreatable" (click)="showCards = true" mat-icon-button matTooltip="{{ 'CLOSE' | translate}}" matTooltipPosition="after" routerLink="/administracion">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="clientes-content">
+    <app-app-crud-table [service]="direccionesService" [columns]="columnasDireccion" modalTitle="{{ 'CUSTOMER' | translate}}"></app-app-crud-table>
+  </div>
+</div>
+<app-cards *ngIf="showCards"></app-cards>

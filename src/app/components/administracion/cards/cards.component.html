@@ -1,0 +1,34 @@
+<div class="contenido" *ngIf="showCards">
+  <div class="header" [@fadeInLeft]="fadeInLeft">
+    <div class="header-text">
+      <div class="title">
+        <h3>{{ 'TITLECARDS' | translate }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- card empleados -->
+      <div class="col-md-4" [@bounceInRight]="bounceInLeft">
+        <app-empleados-card></app-empleados-card>
+      </div>
+      <!-- card oficinas -->
+      <div class="col-md-4" [@bounceInDown]="bounceInDown">
+        <app-oficinas-card></app-oficinas-card>
+      </div>
+      <!-- card sociedades -->
+      <div class="col-md-4" [@bounceInRight]="bounceInRight">
+        <app-sociedades-card></app-sociedades-card>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <!-- card clientes -->
+      <div class="col-md-4" [@bounceInLeft]="bounceInLeft">
+        <app-clientes-card></app-clientes-card>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

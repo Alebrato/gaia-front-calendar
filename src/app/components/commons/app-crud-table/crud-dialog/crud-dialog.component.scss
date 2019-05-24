@@ -1,0 +1,49 @@
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  display: none;
+}
+
+input:invalid {
+  color: red;
+}
+
+.submit-options {
+  text-align: right;
+}
+
+.mat-form-field {
+  width: 46%;
+  margin: 0.25rem 2rem 0 0 !important;
+}
+
+.mod_close_btn {
+  float: right;
+}
+
+.forms-container {
+  max-height: 600px;
+  overflow: auto;
+  margin: 2%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .header-dialog.ng-star-inserted {
+    font-size: x-small;
+  }
+
+  .forms-container {
+    max-height: 400px;
+  }
+
+  .mod_close_btn {
+    float: right;
+    margin: 0px -35px 0 0;
+  }
+
+  .submit-options {
+    text-align: right;
+    margin: 12px -30px -18px 0;
+  }
+}

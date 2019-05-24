@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="header-dialog" *ngIf="mode=='new'">
+        <h2>{{ 'ADD' | translate }} {{crudTable.modalTitle.toLowerCase()}}</h2>
+      </div>
+      <div class="header-dialog" *ngIf="mode=='edit'">
+        <h2>{{ 'EDIT' | translate }} {{crudTable.modalTitle.toLowerCase()}}</h2>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mod_close_btn">
+        <button mat-button mat-dialog-close matTooltip="{{ 'CLOSE' | translate}}">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="forms-container">
+        <form (submit)="saveDataNew()">
+          <app-group-fields [fields]="data.columns" [data]="data.data"></app-group-fields>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="submit-options">
+        <button *ngIf="mode=='new'" class="submit-btn" mat-button type="button" (click)="saveDataNew()">
+          {{ 'SAVENEW' | translate }}
+         </button>
+        <button class="submit-btn" mat-button type="button" (click)="saveDataClose()">
+            {{ 'SAVE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

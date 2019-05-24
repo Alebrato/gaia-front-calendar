@@ -1,0 +1,100 @@
+<ng-container>
+  <mat-toolbar class="header">
+    <!--Menu toggle button-->
+    <button type="button" mat-icon-button (click)="sidenav.toggle()" title="Open sidenav">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="img_logo">
+      <img src="/assets/svg/Avertia.svg">
+    </div>
+    <div class="btn_logout">
+      <button type="button" mat-icon-button matTooltip="{{ 'LOGOUT' | translate }}" routerLink="/login">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+    <div class="btn-location">
+      <mat-form-field floatLabel="never">
+        <mat-select [(value)]="selected" [ngClass]="selected">
+          <mat-option (click)="setLang('es')" value= "es" matTooltip="{{ 'ES' | translate }}">
+            <div class="flag">
+              <img src="/assets/svg/spain.svg">
+            </div>
+          </mat-option>
+          <mat-option (click)="setLang('en')" value= "en" matTooltip="{{ 'EN' | translate }}">
+            <div class="flag">
+              <img src="/assets/svg/united-kingdom.svg">
+            </div>
+          </mat-option>
+          <mat-option (click)="setLang('eu')" value= "eu" matTooltip="{{ 'EU' | translate }}">
+            <div class="flag">
+              <img src="/assets/svg/basque-country.svg">
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="user-name">
+       {{getUsername()}} {{getUsersurname()}}
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="administracion-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+      [fixedBottomGap]="options.value.bottom">
+      <!-- Menu Lateral -->
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon matTooltip="{{ 'MANAGE' | translate }}" matTooltipPosition="before" value="bold">add_to_queue</mat-icon>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical>
+            <!-- Botón añadir empleados-->
+            <mat-button-toggle matTooltip="{{ 'EMPLOYEES' | translate}}" matTooltipPosition="before" value="bold"
+              (click)="showCards = false" routerLink="/administracion/empleados" routerLinkActive="active">
+              <mat-icon>person</mat-icon>
+            </mat-button-toggle>
+            <!-- Botón añadir sociedades-->
+            <mat-button-toggle matTooltip="{{ 'CORPS' | translate}}" matTooltipPosition="before" value="bold" (click)="showCards = false"
+              routerLink="/administracion/sociedades" routerLinkActive="active">
+              <mat-icon>domain</mat-icon>
+            </mat-button-toggle>
+            <!-- Botón añadir oficinas-->
+            <mat-button-toggle matTooltip="{{ 'OFFICES' | translate}}" matTooltipPosition="before" value="bold" (click)="showCards = false"
+              routerLink="/administracion/oficinas" routerLinkActive="active">
+              <mat-icon>location_city</mat-icon>
+            </mat-button-toggle>
+            <!-- Botón añadir clientes-->
+            <mat-button-toggle matTooltip="{{ 'CUSTOMER' | translate}}" matTooltipPosition="before" value="bold"
+              (click)="showCards = false" routerLink="/administracion/clientes" routerLinkActive="active">
+              <mat-icon>people</mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </mat-expansion-panel>
+        <!-- Filtro por ROL-->
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [appSecurity]="['Rol.Empleado', 'Rol.JefeProyecto']">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>event</mat-icon>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical>
+            <mat-button-toggle value="bold">
+              <mat-icon>person</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="bold">
+              <mat-icon>school</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="bold">
+              <mat-icon>group</mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-sidenav>
+    <mat-sidenav-content [formGroup]="options">
+      <!-- Carga de componentes-->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

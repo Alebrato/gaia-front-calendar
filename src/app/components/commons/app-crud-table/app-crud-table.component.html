@@ -1,0 +1,63 @@
+<div class="mat-table-loading-shade" *ngIf="isLoadingResults">
+  <div class="loading_spinner" [@fadeInLeft]="fadeInLeft">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="txt_load">
+      <span>{{ 'LOADING' | translate}}</span>
+    </div>
+  </div>
+</div>
+<div class="mat-table-header">
+  <div class="filter_container">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{ 'FILTER' | translate}}">
+    </mat-form-field>
+  </div>
+</div>
+<div class="tabla_container">
+
+  <div class="btn_add_row">
+    <h5>{{ 'ADD' | translate}}</h5>
+    <i *ngIf="!disableCreatable" (click)="addRow()" class="material-icons button" [style.color]="'green'">add_circle</i>
+  </div>
+
+
+  <div class="tabla_block">
+    <mat-table [dataSource]="dataSource" matSort>
+      <!-- Edit Column -->
+      <ng-container matColumnDef="select" class="edit-column">
+        <mat-header-cell *matHeaderCellDef ngClass="select">
+          <span i18n="@@editbtn">{{ 'EDIT' | translate}}</span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" ngClass="select">
+          <div>
+            <i *ngIf="editable(row)" (click)="editRow(row)" class="material-icons button">edit</i>
+            <i *ngIf="deletable(row)" (click)="deleteRow(row)" mwlConfirmationPopover placement="left" class="material-icons button"
+              [style.color]="'red'">delete_forever</i>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Columnas -->
+      <ng-container *ngFor="let columna of columnasFlat" [matColumnDef]="columna.key">
+        <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="classFormat(columna.formatType,columna['customClass'])">
+          <!-- <script type='text/javascript'>
+            console.log(columna);
+            </script> -->
+          <!--{{columna}} -->
+          {{columna.value}} </mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngClass]="classFormat(columna.formatType,columna['customClass'])"> {{valueOf(row,
+          columna.key,
+          columna.formatType)}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="columnsToDisplay()"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnsToDisplay();">
+      </mat-row>
+    </mat-table>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-paginator [length]="dataLength()" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>

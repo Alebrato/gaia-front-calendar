@@ -1,0 +1,26 @@
+<section id="cuerpo">
+  <div class="login-page">
+    <div class="login_block" [@zoomInDown]="zoomInDown">
+      <div class="lottie_logo">
+        <lottie-animation-view [options]="lottieConfig" [width]="300" [height]="150">
+        </lottie-animation-view>
+      </div>
+      <form (*ngIf)="f.submitted && !username.valid" name="form" class="form" (ngSubmit)="login()" #f="ngForm"
+        novalidate>
+        <mat-form-field class="usernameimput">
+          <input matInput type="text" name="username" placeholder="{{ 'USER' | translate }}" [(ngModel)]="model.identifier"
+            #username="ngModel" required />
+        </mat-form-field>
+        <mat-error *ngIf="f.submitted && !username.valid" class="help-block">{{ 'USERNAMEREQUIRED' | translate }}</mat-error>
+        <mat-form-field class="passwordimput">
+          <input matInput type="password" name="password" placeholder="{{ 'PASSWORD' | translate }}" [(ngModel)]="model.password"
+            #password="ngModel" required />
+        </mat-form-field>
+        <mat-error *ngIf="f.submitted && !password.valid" class="help-block">{{ 'PASSWORDREQUIRED' | translate }}</mat-error>
+        <div class="login_submit_button">
+          <button mat-raised-button name="submit" type="submit">{{ 'LOGIN' | translate }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
