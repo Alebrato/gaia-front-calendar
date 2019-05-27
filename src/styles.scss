@@ -62,3 +62,24 @@ mat-footer-row, mat-row {
 .ng-trigger.ng-trigger-transformPanel.ng-tns-c6-1.mat-select-panel.mat-primary.ng-star-inserted {
   min-width: 100% !important;
 }
+
+.flatpickr-calendar {
+  background: #fff;
+  opacity: 0;
+  display: none;
+  text-align: center;
+  visibility: hidden;
+  padding: 0;
+  -webkit-animation: none;
+  animation: none;
+  direction: ltr;
+  border: 0;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 5px;
+  position: absolute;
+  width: 307.875px;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,.08);
+}
