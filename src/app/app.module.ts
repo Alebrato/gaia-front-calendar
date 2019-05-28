@@ -48,6 +48,11 @@ import { SociedadesCardComponent } from './components/administracion/cards/socie
 import { ClientesCardComponent } from './components/administracion/cards/clientes-card/clientes-card.component';
 import { SecurityDirective } from './services/security.directive';
 import { AuthGuardService } from './services/auth-guard.service';
+import { DemoUtilsModule } from '../demo-utils/module';
+import { DemoComponent } from './components/administracion/demo/demo.component';
+import { CommonModule } from '@angular/common';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 @NgModule({
@@ -69,7 +74,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     OficinasCardComponent,
     SociedadesCardComponent,
     ClientesCardComponent,
-    SecurityDirective
+    SecurityDirective,
+    DemoComponent
   ],
   imports: [
     RouterModule,
@@ -105,7 +111,14 @@ import { AuthGuardService } from './services/auth-guard.service';
     MatTooltipModule,
     MatAutocompleteModule,
     LottieAnimationViewModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    HttpClientModule,
+    DemoUtilsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [
     {
@@ -127,6 +140,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     AuthGuardService,
     ClientesService
   ],
+  exports: [DemoComponent],
   bootstrap: [AppComponent],
   entryComponents: [
     CrudDialogComponent,

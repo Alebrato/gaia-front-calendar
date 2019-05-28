@@ -12,6 +12,7 @@ import { OficinasComponent } from './components/administracion/oficinas/oficinas
 import { EmpleadosComponent } from './components/administracion/empleados/empleados.component';
 import { CardsComponent } from './components/administracion/cards/cards.component';
 import { ClientesComponent } from './components/administracion/clientes/clientes.component';
+import { DemoComponent } from './components/administracion/demo/demo.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { Rol } from './model/rol';
 
@@ -50,6 +51,10 @@ const appRoutes: Routes = [
       {
         path: 'clientes',
         component: ClientesComponent
+      },
+      {
+        path: 'calendar',
+        component: DemoComponent
       }
     ]
   }

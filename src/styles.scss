@@ -47,9 +47,9 @@ button:focus {
   outline: 0px;
 }
 /* Centrar mat-expansion panel */
-.mat-expansion-panel-content > .mat-expansion-panel-body { 
+.mat-expansion-panel-content > .mat-expansion-panel-body {
   width: -webkit-fill-available;
-  padding: 0; 
+  padding: 0;
 }
 mat-footer-row, mat-row {
   min-height: 38px !important;
@@ -60,3 +60,5 @@ mat-footer-row, mat-row {
 .ng-trigger.ng-trigger-transformPanel.ng-tns-c6-1.mat-select-panel.mat-primary.ng-star-inserted {
   min-width: 100% !important;
 }
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
