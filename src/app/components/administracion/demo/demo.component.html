@@ -1,4 +1,4 @@
-  <!-- <mwl-demo-utils-calendar-header
+<mwl-demo-utils-calendar-header
   [(view)]="view"
   [(viewDate)]="viewDate"
   (viewDateChange)="fetchEvents()"
@@ -39,8 +39,8 @@
     >
     </mwl-calendar-day-view>
   </div>
-</div> -->
-<div class="row text-center">
+</div>
+<!-- <div class="row text-center">
   <div class="col-md-4">
     <div class="btn-group">
       <div
@@ -134,16 +134,22 @@
 
 <!-- Everything you see below is just for the demo, you don't need to include it in your app -->
 
-<br /><br /><br />
+ <br /><br /><br />
 
 <h3>
   Edit events
+  <!-- <button class="btn btn-primary pull-right" (click)="addEvent()"> -->
   <button class="btn btn-primary pull-right" (click)="addEvent()">
     Add new
+    <!-- <div><code>observable|async</code>: Time: {{ time | async }}</div> -->
   </button>
   <div class="clearfix"></div>
+   <p *ngFor="let num of events$ | async">
+      {{ num.title }}
+  </p>
+  <p>{{time | async}}</p>
 </h3>
-
+<!--
 <div class="table-responsive">
   <table class="table table-bordered">
     <thead>
@@ -243,4 +249,4 @@
       OK
     </button>
   </div>
-</ng-template>
+</ng-template> -->
